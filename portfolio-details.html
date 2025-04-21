@@ -4,9 +4,9 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Portfolio Details - Maxim Bootstrap Template</title>
-  <meta name="description" content="">
-  <meta name="keywords" content="">
+  <title>泰文子音母音學習 - Maxim Bootstrap Template</title>
+  <meta name="description" content="透過互動遊戲學習泰文的子音與母音，提升學習樂趣！">
+  <meta name="keywords" content="泰文學習, 子音母音, 教育遊戲, 語言學習">
 
   <!-- Favicons -->
   <link href="assets/img/favicon.png" rel="icon">
@@ -15,7 +15,7 @@
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -34,40 +34,74 @@
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
+  <style>
+    .game-section {
+      margin-top: 20px;
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      background-color: #f9f9f9;
+    }
+
+    .game-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .game-item {
+      padding: 10px;
+      text-align: center;
+      background-color: #e0f7fa;
+      border: 1px solid #00796b;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .game-item.matched {
+      background-color: #a5d6a7;
+      cursor: default;
+    }
+
+    .dialogue-option {
+      display: block;
+      margin: 10px 0;
+      padding: 10px;
+      background-color: #ffccbc;
+      border: 1px solid #d84315;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .dialogue-option.correct {
+      background-color: #a5d6a7;
+    }
+
+    .dialogue-option.incorrect {
+      background-color: #ef9a9a;
+    }
+  </style>
 </head>
 
-<body class="portfolio-details-page">
+<body class="thai-learning-page">
 
   <header id="header" class="header d-flex align-items-center fixed-top">
     <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
   
-      <!-- 設定網站標題為月島螢的名字 -->
+      <!-- 設定網站標題為泰文學習 -->
       <a href="index.html" class="logo d-flex align-items-center">
-        <h1 class="sitename">月島螢的世界</h1>
+        <h1 class="sitename">泰文學習世界</h1>
       </a>
   
       <nav id="navmenu" class="navmenu">
         <ul>
-          <!-- 修改導航選單中的文字為與月島螢相關的內容 -->
-          <li><a href="#hero">月島螢介紹</a></li>
-          <li><a href="#about">關於月島</a></li>
-          <li><a href="#services">月島的成長</a></li>
-          <li><a href="#portfolio">月島的故事</a></li>
-          <li><a href="#team">排球少年角色</a></li>
-          <li class="dropdown"><a href="#"><span>角色關係</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-            <ul>
-              <li><a href="#">與影山的關係</a></li>
-              <li class="dropdown"><a href="#"><span>與其他隊友的互動</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-                <ul>
-                  <li><a href="#">與田中</a></li>
-                  <li><a href="#">與大地</a></li>
-                  <li><a href="#">與日向</a></li>
-                </ul>
-              </li>
-              <li><a href="#">更多角色介紹</a></li>
-            </ul>
-          </li>
-          <li><a href="#contact">聯繫我們</a></li>
+          <!-- 修改導航選單中的文字為與泰文學習相關的內容 -->
+          <li><a href="#hero">學習介紹</a></li>
+          <li><a href="#about">關於泰文</a></li>
+          <li><a href="#services">學習方法</a></li>
+          <li><a href="#portfolio">學習資源</a></li>
+          <li><a href="#team">學習社群</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
@@ -163,6 +197,35 @@
 
     </section><!-- /Portfolio Details Section -->
 
+    <section id="thai-learning-game" class="section">
+      <div class="container" data-aos="fade-up">
+        <h2>泰文子音母音練習遊戲</h2>
+        <p>透過遊戲方式學習泰文的子音與母音！</p>
+    
+        <!-- Matching Game -->
+        <div id="matching-game" class="game-section">
+          <h3>連連看遊戲</h3>
+          <div class="game-grid">
+            <div class="game-item" data-pair="1">ก</div>
+            <div class="game-item" data-pair="2">ข</div>
+            <div class="game-item" data-pair="1">ka</div>
+            <div class="game-item" data-pair="2">kha</div>
+          </div>
+          <p id="game-status"></p>
+        </div>
+    
+        <!-- Dialogue Game -->
+        <div id="dialogue-game" class="game-section">
+          <h3>對話練習</h3>
+          <p>選擇正確的回答來完成對話：</p>
+          <p><strong>問題：</strong>สวัสดีครับ (你好)</p>
+          <button class="dialogue-option" data-correct="true">สวัสดีครับ</button>
+          <button class="dialogue-option" data-correct="false">ขอบคุณครับ</button>
+          <p id="dialogue-status"></p>
+        </div>
+      </div>
+    </section>
+
   </main>
 
   <footer id="footer" class="footer dark-background">
@@ -253,7 +316,52 @@
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
-
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      // Matching Game Logic
+      const gameItems = document.querySelectorAll("#matching-game .game-item");
+      let firstSelection = null;
+    
+      gameItems.forEach(item => {
+        item.addEventListener("click", () => {
+          if (item.classList.contains("matched") || firstSelection === item) return;
+    
+          item.classList.add("selected");
+    
+          if (!firstSelection) {
+            firstSelection = item;
+          } else {
+            if (firstSelection.dataset.pair === item.dataset.pair) {
+              firstSelection.classList.add("matched");
+              item.classList.add("matched");
+              document.getElementById("game-status").textContent = "配對成功！";
+            } else {
+              document.getElementById("game-status").textContent = "配對失敗，請再試一次！";
+            }
+            setTimeout(() => {
+              firstSelection.classList.remove("selected");
+              item.classList.remove("selected");
+              firstSelection = null;
+            }, 1000);
+          }
+        });
+      });
+    
+      // Dialogue Game Logic
+      const dialogueOptions = document.querySelectorAll("#dialogue-game .dialogue-option");
+      dialogueOptions.forEach(option => {
+        option.addEventListener("click", () => {
+          if (option.dataset.correct === "true") {
+            option.classList.add("correct");
+            document.getElementById("dialogue-status").textContent = "回答正確！";
+          } else {
+            option.classList.add("incorrect");
+            document.getElementById("dialogue-status").textContent = "回答錯誤，請再試一次！";
+          }
+        });
+      });
+    });
+  </script>
 </body>
 
 </html>
